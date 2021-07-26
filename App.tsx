@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import {Alert, Button, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Alert, StyleSheet, Text, View} from 'react-native';
 import {DefaultButton} from './src/components';
 import {colors} from './src/utils/theme';
 
@@ -28,13 +28,8 @@ const App = () => {
     return (
         <View style={styles.mainContainer}>
             <Text style={styles.text}>Hola</Text>
-            <Button
-                title="button"
-                onPress={() => {
-                    console.log('holiwis');
-                }}
-            />
-            <DefaultButton onPress={showAlert} />
+            <DefaultButton compStyle={styles.button} onPress={showAlert} text="Texto de prueba" />
+            <DefaultButton color={'white'} onPress={showAlert} text="Bigger" textSize={18} />
         </View>
     );
 };
@@ -53,6 +48,9 @@ const styles = StyleSheet.create({
     },
     text: {
         color: colors.mainColor,
+    },
+    button: {
+        width: '10%',
     },
 });
 

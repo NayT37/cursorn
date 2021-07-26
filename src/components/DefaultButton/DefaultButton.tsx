@@ -1,18 +1,30 @@
 import React from 'react';
-import {Alert, Button, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {colors} from './src/utils/theme';
+import {Text, TouchableOpacity, ViewStyle} from 'react-native';
 import styles from './styles';
+import {colors} from '../../utils/theme';
 
 interface Props {
     onPress: () => void;
+    text: string;
+    compStyle?: ViewStyle;
+    color: string;
+    textSize: number;
 }
 
-const DefaultButton = ({onPress}: Props) => {
+const DefaultButton = ({compStyle, color, onPress, text, textSize}: Props) => {
     return (
-        <TouchableOpacity style={styles.mainContainer} onPress={onPress}>
-            <Text style={styles.btnText}>Custom Text</Text>
+        /* style={} or style={[]} */
+        <TouchableOpacity style={[styles.mainContainer, compStyle, {backgroundColor: color}]} onPress={onPress}>
+            <Text style={[styles.btnText, {fontSize: textSize}]}>{text}</Text>
         </TouchableOpacity>
     );
+};
+
+// This way a default property value should be setted
+DefaultButton.defaultProps = {
+    compStyle: {},
+    color: colors.mainColor,
+    textSize: 14,
 };
 
 export default DefaultButton;

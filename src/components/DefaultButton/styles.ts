@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: '80%',
         backgroundColor: 'white',
+        justifyContent: 'center',
     },
     btnText: {
         alignSelf: 'center',
