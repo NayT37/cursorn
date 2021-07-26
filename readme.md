@@ -63,10 +63,38 @@ Always starts with uppercase and MUST be a noun
 -   Array, objects and functions are stored as references in memory
 -   Try to use `dummy components` (components that requires props to work)
 
+## Husky
+
+`npm i -D husky@3.0.9`
+`"check-ts": "tsc --watch --noEmit --skipLibCheck",`
+`npm i -D lint-staged`
+
+```
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit --skipLibCheck && lint-staged"
+    }
+  },
+```
+
+```
+"lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier \"src/**/*.{js,jsx,json,tsx,ts}\" --write",
+      "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix"
+    ]
+  },
+```
+
+-   `"*.{js,jsx,ts,tsx,json}": [` For all files
+-   `"prettier \"src/**/*.{js,jsx,json,tsx,ts}\" --write",` Autofix prettier code validations
+-   `"eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix"` Autofix eslint code validations
+
 ## Good Practices
 
 -   If it's not used, delete it!
 -   Write clean code
+-   Always look for `yarn.lock` or `package-lock.json` files to use the correct manager
 
 ## Useful Links
 
