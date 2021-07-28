@@ -12,29 +12,52 @@ interface Props {
     theme: 'primary' | 'secondary';
 }
 
+/**
+ * Get button selected theme and returns an style object with proper styling
+ * @param selectedTheme
+ * @returns style object
+ */
+const getViewStyle = (selectedTheme: string) => {
+    if (selectedTheme === 'primary') {
+        return styles.btnPrimary;
+    }
+    if (selectedTheme === 'secondary') {
+        return styles.btnSecondary;
+    }
+    // Because of good practices, always return something with the same return type
+    return {}; // Always return something
+};
+
 const DefaultButton = ({color, compStyle, onPress, text, textSize, theme}: Props) => {
-    const viewStyle = () => {
+    /*  const getViewStyle = () => {
         if (theme === 'primary') {
             return styles.btnPrimary;
         }
         if (theme === 'secondary') {
             return styles.btnSecondary;
         }
-    };
+        // Because of good practices, always return something with the same return type
+        return {}; // Always return something
+    }; */
 
-    const viewText = useCallback(() => {
+    /**
+     * Remember good practices for function naming
+     * @returns object
+     */
+    const getTextStyle = useCallback(() => {
         if (theme === 'primary') {
             return styles.txtPrimary;
         }
         if (theme === 'secondary') {
             return styles.txtSecondary;
         }
+        return {}; // Always return something
     }, [theme]);
 
     return (
         /* style={} or style={[]} */
-        <TouchableOpacity style={[styles.mainContainer, compStyle, {backgroundColor: color}, viewStyle()]} onPress={onPress}>
-            <Text style={[styles.btnText, {fontSize: textSize}, viewText()]}>{text}</Text>
+        <TouchableOpacity style={[styles.mainContainer, compStyle, {backgroundColor: color}, getViewStyle(theme)]} onPress={onPress}>
+            <Text style={[styles.btnText, {fontSize: textSize}, getTextStyle()]}>{text}</Text>
         </TouchableOpacity>
     );
 };
