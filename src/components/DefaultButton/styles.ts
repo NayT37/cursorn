@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../utils/theme';
 
 const styles = StyleSheet.create({
     mainContainer: {
@@ -9,6 +10,18 @@ const styles = StyleSheet.create({
     },
     btnText: {
         alignSelf: 'center',
+    },
+    btnPrimary: {
+        backgroundColor: colors.primary,
+    },
+    txtPrimary: {
+        color: colors.white,
+    },
+    btnSecondary: {
+        backgroundColor: colors.white,
+    },
+    txtSecondary: {
+        color: colors.primary,
     },
 });
 
