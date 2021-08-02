@@ -29,17 +29,6 @@ const getViewStyle = (selectedTheme: string) => {
 };
 
 const DefaultButton = ({color, compStyle, onPress, text, textSize, theme}: Props) => {
-    /*  const getViewStyle = () => {
-        if (theme === 'primary') {
-            return styles.btnPrimary;
-        }
-        if (theme === 'secondary') {
-            return styles.btnSecondary;
-        }
-        // Because of good practices, always return something with the same return type
-        return {}; // Always return something
-    }; */
-
     /**
      * Remember good practices for function naming
      * @returns object
@@ -57,6 +46,10 @@ const DefaultButton = ({color, compStyle, onPress, text, textSize, theme}: Props
     return (
         /* style={} or style={[]} */
         <TouchableOpacity style={[styles.mainContainer, compStyle, {backgroundColor: color}, getViewStyle(theme)]} onPress={onPress}>
+            {/*
+                Another solution:
+                styles[theme] -> This way it will look for
+             */}
             <Text style={[styles.btnText, {fontSize: textSize}, getTextStyle()]}>{text}</Text>
         </TouchableOpacity>
     );
