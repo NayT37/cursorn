@@ -100,3 +100,4 @@ Now commits should be restricted to Husky precommit. Test if everything it's wor
 -   Array, objects and functions are stored as references in memory
 -   Try to use `dummy components` (components that requires props to work)
 -   Keep an eye to component refresh. It happens when props or states changes
+-   Try to avoid `any` type as much as possible
