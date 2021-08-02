@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 // Components
 import {StyleSheet, View} from 'react-native';
-import {DefaultButton} from './src/components';
-import CustomModal from './src/components/organisms/CustomModal/CustomModal';
+import {CustomModal, DefaultButton} from './src/components';
 // Resources
 import {colors} from './src/utils/theme';
 
