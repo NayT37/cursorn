@@ -32,7 +32,14 @@ const App = () => {
         <View style={styles.mainContainer}>
             <DefaultButton onPress={showAlert} text="Primary" />
             <DefaultButton theme="secondary" onPress={showAlert} text="Secondary" />
-            <CustomModal isModalVisible={IsModalVisible} text="Hello World" actionButtonText="ok" onModalAction={hideAlert} />
+            <CustomModal
+                actionButtonText="ok"
+                cancelButtonText="Cancel"
+                isModalVisible={IsModalVisible}
+                onModalAction={hideAlert}
+                onModalCancel={hideAlert}
+                text="Hello World"
+            />
         </View>
     );
 };
