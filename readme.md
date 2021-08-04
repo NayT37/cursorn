@@ -17,6 +17,8 @@ Use `.tsx` only when some render would be used, otherwise go for the simple exte
 
 ## Clean Code Considerations
 
+Try to keep all names in camelCase. Use capital first letter JUST for components.
+
 ### Booleans
 
 Try to think in positive terms. To name a booleand use:
@@ -52,6 +54,10 @@ Always starts with uppercase and MUST be a noun
 -   Always starts with a verb
 -   Folder name should be same as file
 
+#### Importing components inside components
+
+Components should import components from it's folder and not from the components index (as App.tsx file does).
+
 ## Pre commit Hooks
 
 First install this packages: `npm i -D husky@3.0.9` and `npm i -D lint-staged`. After that, go to package.json and type inside scripts: `"check-ts": "tsc --watch --noEmit --skipLibCheck"`, this command will check for ts errors before a commit it's made.
@@ -80,6 +86,10 @@ Finally add this two code blocks to package.json file:
 -   `"eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix"` Autofix eslint code validations
 
 Now commits should be restricted to Husky precommit. Test if everything it's working.
+
+## Typography
+
+Create a custom text component to handle global text styles.
 
 ## Good Practices
 

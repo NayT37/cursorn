@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 // Components
 import {StyleSheet, View} from 'react-native';
-import {DefaultButton} from './src/components';
-import CustomModal from './src/components/organisms/CustomModal/CustomModal';
+import {CustomModal, DefaultButton, Typography} from './src/components';
 // Resources
 import {colors} from './src/utils/theme';
 
@@ -31,9 +30,19 @@ const App = () => {
 
     return (
         <View style={styles.mainContainer}>
+            <Typography size={30} color={colors.primary}>
+                Title
+            </Typography>
             <DefaultButton onPress={showAlert} text="Primary" />
             <DefaultButton theme="secondary" onPress={showAlert} text="Secondary" />
-            <CustomModal isModalVisible={IsModalVisible} text="Hello World" actionButtonText="ok" onModalAction={hideAlert} />
+            <CustomModal
+                actionButtonText="Ok"
+                cancelButtonText="Cancel"
+                isModalVisible={IsModalVisible}
+                onModalAction={hideAlert}
+                onModalCancel={hideAlert}
+                text="Hello World"
+            />
         </View>
     );
 };
@@ -42,6 +51,7 @@ const App = () => {
  * This stylesheet calculates styles ONCE and avoids re rendering
  */
 const styles = StyleSheet.create({
+    title: {},
     mainContainer: {
         alignItems: 'center',
         backgroundColor: colors.secondary,
