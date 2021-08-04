@@ -91,6 +91,25 @@ Now commits should be restricted to Husky precommit. Test if everything it's wor
 
 Create a custom text component to handle global text styles.
 
+## Assets
+
+### Fonts
+
+Create folder `assets/fonts`. In root folder create a new file with name `react-native.config.js` with this content:
+
+```
+module.exports = {
+    assets: ['./src/assets/fonts/'],
+};
+```
+
+Go to terminal and type `npx react-native link`, some changes in iOS and Android folder should appear.
+
+#### Remember:
+
+Android detects file name as it is,
+iOS detects an intern name from the file, font must be installed in order to see it. Postscript Name it's the needed name (but regular name could be supported too).
+
 ## Good Practices
 
 -   If it's not used, delete it!
