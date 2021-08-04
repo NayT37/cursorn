@@ -1,7 +1,8 @@
 import React from 'react';
 // Components
-import {Modal, Text, View} from 'react-native';
+import {Modal, View} from 'react-native';
 import {DefaultButton} from '../../../components';
+import Typography from '../../Typography';
 // Resources
 import styles from './styles';
 
@@ -19,7 +20,9 @@ const CustomModal = ({actionButtonText, isModalVisible, cancelButtonText, onModa
         <Modal visible={isModalVisible} transparent animationType="fade">
             <View style={styles.modal}>
                 <View style={styles.modalWrapper}>
-                    <Text style={styles.modalText}>{text}</Text>
+                    <View style={styles.modalText}>
+                        <Typography>{text}</Typography>
+                    </View>
                     <DefaultButton onPress={onModalAction} text={actionButtonText} compStyle={styles.modalButton} textSize={18} />
                     {cancelButtonText && onModalCancel ? (
                         <DefaultButton

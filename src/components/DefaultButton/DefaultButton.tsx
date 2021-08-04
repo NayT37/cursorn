@@ -1,7 +1,8 @@
 import React, {useCallback} from 'react';
-import {Text, TouchableOpacity, ViewStyle} from 'react-native';
+import {TouchableOpacity, ViewStyle} from 'react-native';
 import styles from './styles';
 import {colors} from '../../utils/theme';
+import Typography from '../Typography';
 
 interface Props {
     color: string;
@@ -35,12 +36,12 @@ const DefaultButton = ({color, compStyle, onPress, text, textSize, theme}: Props
      */
     const getTextStyle = useCallback(() => {
         if (theme === 'primary') {
-            return styles.txtPrimary;
+            return colors.white;
         }
         if (theme === 'secondary') {
-            return styles.txtSecondary;
+            return colors.primary;
         }
-        return {}; // Always return something
+        return colors.black; // Always return something
     }, [theme]);
 
     return (
@@ -50,7 +51,9 @@ const DefaultButton = ({color, compStyle, onPress, text, textSize, theme}: Props
                 Another solution:
                 styles[theme] -> This way it will look for
              */}
-            <Text style={[styles.btnText, {fontSize: textSize}, getTextStyle()]}>{text}</Text>
+            <Typography align="center" size={textSize} color={getTextStyle()}>
+                {text}
+            </Typography>
         </TouchableOpacity>
     );
 };
