@@ -1,8 +1,10 @@
 import React, {useCallback} from 'react';
+// Components
 import {TouchableOpacity, ViewStyle} from 'react-native';
+import Typography from '../../atoms/Typography';
+// Resources
+import {colors} from '../../../utils/theme';
 import styles from './styles';
-import {colors} from '../../utils/theme';
-import Typography from '../Typography';
 
 interface Props {
     color: string;

@@ -2,7 +2,7 @@ import React from 'react';
 // Components
 import {Modal, View} from 'react-native';
 import {DefaultButton} from '../../../components';
-import Typography from '../../Typography';
+import Typography from '../../atoms/Typography';
 // Resources
 import styles from './styles';
 

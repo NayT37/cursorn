@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react';
 // Components
 import {Text} from 'react-native';
 // Resources
-import {colors} from '../../utils/theme';
+import {colors} from '../../../utils/theme';
 
 interface Props {
     children: ReactNode;
