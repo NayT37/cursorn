@@ -53,7 +53,7 @@ const DefaultButton = ({color, compStyle, onPress, text, textSize, theme}: Props
                 Another solution:
                 styles[theme] -> This way it will look for
              */}
-            <Typography align="center" size={textSize} color={getTextStyle()}>
+            <Typography align="center" size={textSize} color={getTextStyle()} variant="medium">
                 {text}
             </Typography>
         </TouchableOpacity>
