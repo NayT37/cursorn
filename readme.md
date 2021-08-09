@@ -58,6 +58,14 @@ Always starts with uppercase and MUST be a noun
 
 Components should import components from it's folder and not from the components index (as App.tsx file does).
 
+#### Scroll View
+
+Let's us scroll when content it's bigger than screen. You should use a background color in iOS if you are using one, so it won't look bad when scrolling limits.
+
+#### Safe Area View
+
+Wraps Scroll View. If it's wrapping the entire `ScrollView` component, it will create a limit at top and bottom. On the other hand, if the component it's an autoclosing tag (`<SafeAreaView />`) it only will add a limit at the top.
+
 ## Pre commit Hooks
 
 First install this packages: `npm i -D husky@3.0.9` and `npm i -D lint-staged`. After that, go to package.json and type inside scripts: `"check-ts": "tsc --watch --noEmit --skipLibCheck"`, this command will check for ts errors before a commit it's made.
@@ -90,6 +98,25 @@ Now commits should be restricted to Husky precommit. Test if everything it's wor
 ## Typography
 
 Create a custom text component to handle global text styles.
+
+## Assets
+
+### Fonts
+
+Create folder `assets/fonts`. In root folder create a new file with name `react-native.config.js` with this content:
+
+```
+module.exports = {
+    assets: ['./src/assets/fonts/'],
+};
+```
+
+Go to terminal and type `npx react-native link`, some changes in iOS and Android folder should appear.
+
+#### Remember:
+
+Android detects file name as it is,
+iOS detects an intern name from the file, font must be installed in order to see it. Postscript Name it's the needed name (but regular name could be supported too).
 
 ## Good Practices
 
