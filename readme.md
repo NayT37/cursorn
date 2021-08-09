@@ -58,6 +58,14 @@ Always starts with uppercase and MUST be a noun
 
 Components should import components from it's folder and not from the components index (as App.tsx file does).
 
+#### Scroll View
+
+Let's us scroll when content it's bigger than screen. You should use a background color in iOS if you are using one, so it won't look bad when scrolling limits.
+
+#### Safe Area View
+
+Wraps Scroll View. If it's wrapping the entire `ScrollView` component, it will create a limit at top and bottom. On the other hand, if the component it's an autoclosing tag (`<SafeAreaView />`) it only will add a limit at the top.
+
 ## Pre commit Hooks
 
 First install this packages: `npm i -D husky@3.0.9` and `npm i -D lint-staged`. After that, go to package.json and type inside scripts: `"check-ts": "tsc --watch --noEmit --skipLibCheck"`, this command will check for ts errors before a commit it's made.
