@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // Components
 import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
-import {CustomModal, DefaultButton, Typography} from './src/components';
+import {CustomModal, DefaultButton, Separator, Typography} from './src/components';
 // Resources
 import {colors} from './src/utils/theme';
 
@@ -39,6 +39,7 @@ const App = () => {
                     <Typography color={colors.primary} size={30} variant="medium">
                         Sub title
                     </Typography>
+                    <Separator separation={50} />
                     <Typography color={colors.white} variant="regular">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aliquid ipsum odio? Culpa illo nobis dolore voluptate
                         quasi cum, quisquam ex blanditiis adipisci hic unde itaque doloremque ducimus? Provident, sit! Lorem ipsum dolor sit amet
@@ -47,7 +48,9 @@ const App = () => {
                         elit. Consequatur aliquid ipsum odio? Culpa illo nobis dolore voluptate quasi cum, quisquam ex blanditiis adipisci hic unde
                         itaque doloremque ducimus? Provident, sit!
                     </Typography>
+                    <Separator separation={50} />
                     <DefaultButton onPress={showAlert} text="Primary" />
+                    <Separator separation={25} />
                     <DefaultButton theme="secondary" onPress={showAlert} text="Secondary" />
                     <CustomModal
                         actionButtonText="Ok"
