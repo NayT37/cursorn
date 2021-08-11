@@ -19,6 +19,8 @@ Use `.tsx` only when some render would be used, otherwise go for the simple exte
 
 Try to keep all names in camelCase. Use capital first letter JUST for components.
 
+It's also important to provide enough elements so the components could be understood from the tag itself. To know what it is and how does it behaves?
+
 ### Booleans
 
 Try to think in positive terms. To name a booleand use:
@@ -118,6 +120,56 @@ Go to terminal and type `npx react-native link`, some changes in iOS and Android
 Android detects file name as it is,
 iOS detects an intern name from the file, font must be installed in order to see it. Postscript Name it's the needed name (but regular name could be supported too).
 
+## Navigation
+
+There are two packages which could handle react native navigation. Those are: `react-native-navigation` and `React Navigation`.
+
+### react-native-navigation
+
+#### Link: https://github.com/wix/react-native-navigation
+
+-   Created by wix
+-   Uses native compopnents
+
+### React Navigation
+
+#### Link: https://github.com/react-navigation
+
+-   Better Docs
+-   More known
+-   Better option at today
+
+#### Steps for instalation
+
+You can check the guide here: https://reactnavigation.org/docs/getting-started
+
+First, install some packages following this commands:
+
+-   `npm install @react-navigation/native` https://reactnavigation.org/docs/getting-started/#installation
+-   `npm install react-native-screens react-native-safe-area-context` https://reactnavigation.org/docs/getting-started/#installing-dependencies-into-a-bare-react-native-project
+
+After that, in Android go to `./android/app/src/main/java/com/cursorn/MainActivity.java` and:
+
+-   Add `import android.os.Bundle;`
+-   Above `getMainComponentName` add:
+
+```
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
+```
+
+Finally, you can run `npm install @react-navigation/native-stack`.
+
+#### Configuration
+
+Create a MainNavigator file inside `~/src/navigation`, implement the navigator there. Navigator takes the first screen as the initial screen. If you want to have the inital screen changed there are two ways to achieve this. With a simulation of real navigation (first screen it's setted first) or use `initialRouteName="Welcome"` inside the navigator component instead.
+
+##### Remember:
+
+Avoid default navigation headers. Navigation libraries tend to update a lot and headers changes too.
+
 ## Good Practices
 
 -   If it's not used, delete it!
@@ -138,3 +190,5 @@ iOS detects an intern name from the file, font must be installed in order to see
 -   Try to use `dummy components` (components that requires props to work)
 -   Keep an eye to component refresh. It happens when props or states changes
 -   Try to avoid `any` type as much as possible
+-   Stop when istalling packages
+-   Folder structure doesn't follow app navigation structure
