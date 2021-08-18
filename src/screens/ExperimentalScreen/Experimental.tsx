@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // Components
 import {SafeAreaView, ScrollView, View} from 'react-native';
-import {CustomModal, DefaultButton, Separator, Typography} from '../../components';
+import {CustomModal, DefaultButton, MainHeader, Separator, Typography} from '../../components';
 // Resources
 import {colors} from '../../utils/theme';
 import styles from './styles';
@@ -19,9 +19,6 @@ const ExperimentalScreen = () => {
     };
     */
 
-    // TODO: Remove margins top and bottom and replace with separator
-    // TODO: Implement isHorizonal for separator
-
     const [IsModalVisible, setIsModalVisible] = useState(false);
 
     const showAlert = () => {
@@ -35,6 +32,7 @@ const ExperimentalScreen = () => {
     return (
         <>
             <SafeAreaView />
+            <MainHeader title="Experimental Screen" />
             <ScrollView style={styles.scrollContainer}>
                 <View style={styles.mainContainer}>
                     <Typography color={colors.primary} size={30} variant="bold">
