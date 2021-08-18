@@ -192,3 +192,6 @@ Avoid default navigation headers. Navigation libraries tend to update a lot and 
 -   Try to avoid `any` type as much as possible
 -   Stop when istalling packages
 -   Folder structure doesn't follow app navigation structure
+
+## Tabs
+Install npm install @react-navigation/bottom-tabs
