@@ -1,14 +1,20 @@
 import React from 'react';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack'; // This breaks the precommit hook
 const {createNativeStackNavigator} = require('@react-navigation/native-stack'); // This is the workaround to solve it
-import {ExperimentalScreen, WelcomeScreen} from '../screens';
 
+// Import a stack inside a stack
+import AuthStack from './AuthStack';
+// Import bottomTabNavigator inside the stack
+import TabNavigator from './TabNavigator';
+
+// Create stack
 const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => (
-    <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen name="Experimental" component={ExperimentalScreen} options={{headerShown: false}} />
-        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown: false}} />
+    /* By setting screenOptions in the Stack Navigator, all the children are gonna have that property */
+    <Stack.Navigator initialRouteName="AuthStack" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="AuthStack" component={AuthStack} />
+        <Stack.Screen name="TabNavigator" component={TabNavigator} />
     </Stack.Navigator>
 );
 
