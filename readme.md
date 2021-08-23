@@ -170,6 +170,35 @@ Create a MainNavigator file inside `~/src/navigation`, implement the navigator t
 
 Avoid default navigation headers. Navigation libraries tend to update a lot and headers changes too.
 
+### React Navigation with Tabs
+
+Install npm install @react-navigation/bottom-tabs
+
+## Icons
+
+Useful links:
+
+-   Github project: `https://github.com/oblador/react-native-vector-icons`
+-   Search for icons: `https://oblador.github.io/react-native-vector-icons/`
+
+Run `npm install --save react-native-vector-icons`. After that, add RN icons types so husky won't break `npm i -D @types/react-native-vector-icons`.
+
+Versions <.60 don't need to install manually or with react native link (for iOS). Check the github with the steps in order to make it work.
+
+### Installation
+
+Add this to `android/app/build.gradle`.
+
+```
+// React Native Icons
+// If we want to customize, we can add this
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
 ## Good Practices
 
 -   If it's not used, delete it!
@@ -192,6 +221,3 @@ Avoid default navigation headers. Navigation libraries tend to update a lot and 
 -   Try to avoid `any` type as much as possible
 -   Stop when istalling packages
 -   Folder structure doesn't follow app navigation structure
-
-## Tabs
-Install npm install @react-navigation/bottom-tabs
