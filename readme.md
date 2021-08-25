@@ -199,6 +199,58 @@ project.ext.vectoricons = [
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
+### Enviroment Variables
+
+People use to do have a `config.ts` file in root folder the root folder.
+
+```
+const API_URL = "some_string";
+```
+
+And use it to store env variables.
+
+#### Using React Native Config
+
+Url: `https://github.com/luggit/react-native-config`
+
+Extra step for Android:
+You'll also need to manually apply a plugin to your app, from `android/app/build.gradle`:
+
+```
+// 2nd line, add a new apply:
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+```
+
+Advanced Android Setup
+
+In android/app/build.gradle, if you use applicationIdSuffix or applicationId that is different from the package name indicated in AndroidManifest.xml in <manifest package="..."> tag, for example, to support different build variants: Add this in android/app/build.gradle
+
+```
+defaultConfig {
+...
+resValue "string", "build_config_package", "YOUR_PACKAGE_NAME_IN_ANDROIDMANIFEST_XML"
+}
+```
+
+`android/app/src/main/AndroidManifest.xml` Search for package name (is in the first lines), with this structure:
+`package="com.cursorn"`
+
+Package name != applicationId
+
+android/app/build.gradle:
+
+```
+    defaultConfig {
+        applicationId "com.cursorn"
+    ...
+    }
+```
+
+resValue "string", "build_config_package", "YOUR_PACKAGE_NAME_IN_ANDROIDMANIFEST_XML"
+
+Change applicationId will tell that the app it's completely different from another (even if code it's the same).
+For example: "com.cursorn" != "com.cursorn.staging"
+
 ## Good Practices
 
 -   If it's not used, delete it!
