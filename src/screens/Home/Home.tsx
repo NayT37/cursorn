@@ -1,15 +1,24 @@
 import React from 'react';
 // Components
-import {Typography} from '../../components';
+import {MainHeader, Typography, DefaultButton} from '../../components';
 import {View} from 'react-native';
 // Resources
 import styles from './styles';
+import {goToScreen} from '../../navigation/controls';
+
+const goToExperimentalScreen = () => {
+    goToScreen('Experimental');
+};
 
 const HomeScreen = () => {
     return (
-        <View style={styles.mainContainer}>
-            <Typography>Home Page</Typography>
-        </View>
+        <>
+            <MainHeader title="Home" hideGoBack />
+            <View style={styles.mainContainer}>
+                <Typography>Home Page</Typography>
+                <DefaultButton text="Go to experimental screen" onPress={goToExperimentalScreen} />
+            </View>
+        </>
     );
 };
 
