@@ -6,6 +6,7 @@ const {createNativeStackNavigator} = require('@react-navigation/native-stack'); 
 import AuthStack from './AuthStack';
 // Import bottomTabNavigator inside the stack
 import TabNavigator from './TabNavigator';
+import {ExperimentalScreen} from '../screens';
 
 // Create stack
 const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ const MainNavigator = () => (
     <Stack.Navigator initialRouteName="AuthStack" screenOptions={{headerShown: false}}>
         <Stack.Screen name="AuthStack" component={AuthStack} />
         <Stack.Screen name="TabNavigator" component={TabNavigator} />
+        <Stack.Screen name="Experimental" component={ExperimentalScreen} />
     </Stack.Navigator>
 );
 
