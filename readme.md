@@ -273,3 +273,4 @@ For example: "com.cursorn" != "com.cursorn.staging"
 -   Try to avoid `any` type as much as possible
 -   Stop when istalling packages
 -   Folder structure doesn't follow app navigation structure
+-   Test api and resources BEFORE code anything related to it, could save you some time
