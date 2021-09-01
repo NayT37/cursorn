@@ -274,3 +274,29 @@ For example: "com.cursorn" != "com.cursorn.staging"
 -   Stop when istalling packages
 -   Folder structure doesn't follow app navigation structure
 -   Test api and resources BEFORE code anything related to it, could save you some time
+
+## Recently Added
+
+Back in the days, these both libraries were part of React Native. They grew up so much so they separate them.
+
+## Async storage
+
+It works as a local storage and we can store data inside the app persistenly
+It uses a key to get/set data
+
+-   Github repo: https://github.com/react-native-async-storage/async-storage
+-   Documentation: https://react-native-async-storage.github.io/async-storage/docs/install/
+    `npm install @react-native-async-storage/async-storage`
+
+Alternatives:
+SQLlite
+Realm react native
+
+everything is stored as string.
+
+## React native netinfo
+
+Give us info about phone connectivity. I can subscribe to network changes.
+
+-   Github repo: https://github.com/react-native-netinfo/react-native-netinfo
+    `npm install --save @react-native-community/netinfo`
