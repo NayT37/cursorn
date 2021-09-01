@@ -4,6 +4,12 @@ import {DefaultButton, MainHeader, Typography, Separator} from '../../components
 import {View} from 'react-native';
 // Resources
 import {goToScreen, resetNavigation} from '../../navigation/controls';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const logout = async () => {
+    await AsyncStorage.setItem('userLoggedInFlag', 'falsessss');
+    resetNavigation();
+};
 
 const HistoryScreen = () => {
     return (
@@ -19,7 +25,7 @@ const HistoryScreen = () => {
                     theme="secondary"
                 />
                 <Separator separation={10} />
-                <DefaultButton text="Log Out" onPress={resetNavigation} />
+                <DefaultButton text="Log Out" onPress={logout} />
             </View>
         </>
     );

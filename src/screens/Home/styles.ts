@@ -7,6 +7,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: '100%',
     },
+    flatListContainer: {
+        height: 30,
+        justifyContent: 'center',
+        marginHorizontal: 15,
+        width: '96%',
+    },
+    activityIndicatorContainer: {
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center',
+    },
 });
 
 export default styles;

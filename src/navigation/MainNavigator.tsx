@@ -11,6 +11,7 @@ import {ExperimentalScreen} from '../screens';
 // Create stack
 const Stack = createNativeStackNavigator();
 
+// With the async storage the initial route name could be change it
 const MainNavigator = () => (
     /* By setting screenOptions in the Stack Navigator, all the children are gonna have that property */
     <Stack.Navigator initialRouteName="AuthStack" screenOptions={{headerShown: false}}>
